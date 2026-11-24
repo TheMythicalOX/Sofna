@@ -1,5 +1,5 @@
 const Outputs = () => {
-  return <div className="w-[33%]">Outputs</div>;
+  return <div className="w-[50%]">Outputs</div>;
 };
 
 export default Outputs;

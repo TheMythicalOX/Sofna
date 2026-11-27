@@ -1,12 +1,17 @@
 import { useState } from "react";
+import { useMixerStore } from "../../MixerStore";
 
 interface BandButtonProps {
-  title: string;
+  BandID: number;
 }
 
-const MuteButton = ({ title }: BandButtonProps) => {
+const MuteButton = ({ BandID }: BandButtonProps) => {
+  const isMuted = useMixerStore((state) => state.inMuted[BandID]);
+  const toggleMuted = useMixerStore((state) => state.toggleInMute);
+
   const OnButtonClick = () => {
-    if (buttonColor === "bg-stone-700") {
+    toggleMuted(BandID);
+    if (isMuted) {
       setButtonColor("bg-red-700");
     } else {
       setButtonColor("bg-stone-700");

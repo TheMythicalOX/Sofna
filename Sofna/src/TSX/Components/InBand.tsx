@@ -1,10 +1,15 @@
 import BandButton from "./BandButton";
 import SoloButton from "./SoloButton";
 import MuteButton from "./MuteButton";
-const InBand = () => {
+
+interface InBandProps {
+  BandID: number;
+}
+
+const InBand = ({ BandID }: InBandProps) => {
   return (
     <div className="flex-1 border grid grid-rows-12">
-      <div className="row-span-1 bg-blue-800">Title</div>
+      <div className="row-span-1 bg-blue-800">BandID={BandID}</div>
       <div className="row-span-3 bg-blue-900">Effects</div>
       <div className="row-span-8 bg-blue-950 grid grid-cols-2 items-center">
         <input
@@ -23,7 +28,7 @@ const InBand = () => {
           <BandButton title="VO3"></BandButton>
           <BandButton title="VO4"></BandButton>
           <SoloButton title=""></SoloButton>
-          <MuteButton title=""></MuteButton>
+          <MuteButton BandID={BandID}></MuteButton>
         </div>
       </div>
     </div>

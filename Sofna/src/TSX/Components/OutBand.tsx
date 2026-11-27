@@ -1,3 +1,5 @@
+import SoloButton from "./SoloButton";
+import MuteButton from "./MuteButton";
 const OutBand = () => {
   const bandButtons =
     "m-auto border rounded-md w-[85%] text-stone-300 text-center";
@@ -13,8 +15,8 @@ const OutBand = () => {
           className="[-webkit-appearance:slider-vertical] h-[90%] w-full m-auto row-span-3"
         />
         <div className="h-[95%] bg-blue-950 grid grid-rows-2 row-span-1">
-          <div className={bandButtons}>Solo</div>
-          <div className={bandButtons}>Mute</div>
+          <SoloButton title=""></SoloButton>
+          <MuteButton title=""></MuteButton>
         </div>
       </div>
     </div>
